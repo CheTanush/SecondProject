@@ -8,6 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="customerdetail")
+//pojo class
 public class Customer {
 	
 	@Id
