@@ -27,11 +27,11 @@ public class CustomerImple implements CustomerService {
 	}
 	@Override
 	public Customer Datasave(Customer customer1) {
-		List<Customer> list=customerRepo.findAll();
+		List<Customer> list=customerRepo.findAll();//database data here present **add method in repo
 		long count=0;
 		
 		for(Customer cust:list) {
-			if(customer1.getName().equals(cust.getName())){
+			if(customer1.getName().equalsIgnoreCase(cust.getName())){
 				count++;
 				
 			}
@@ -39,7 +39,7 @@ public class CustomerImple implements CustomerService {
 			}if(count==0) {
 				String add=this.passwordEncoder.encode(customer1.getAddress());
 				customer1.setAddress(add);
-				Customer customer2=customerRepo.save(customer1);
+				Customer customer2=customerRepo.save(customer1);//pre-defined method
 				return customer2;
 			}else {
 				throw new BusinessException("data is already present",HttpStatus.ALREADY_REPORTED);
@@ -53,6 +53,11 @@ public class CustomerImple implements CustomerService {
 	public void deleteData(Integer id ) {
 		
 		customerRepo.deleteById(id);
+	}
+	@Override
+	public Customer getData(String name) {
+		return customerRepo.findByName(name);
+	    
 	}
 
 }

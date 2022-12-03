@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="customerdetail")
+@Table(name="BRMdetail")
 //pojo class
 public class Customer {
 	
