@@ -8,5 +8,8 @@ public interface CustomerService {
 	
 	public void  deleteData(Integer id);//delete by id using this method
 	
-	public Customer getData(String name);//get the data by customer name
+	public Customer getData(String name);//get the data by customer name or multiple use by querry
+	
+	public void updateData(Customer customer,String name);
+	
 }

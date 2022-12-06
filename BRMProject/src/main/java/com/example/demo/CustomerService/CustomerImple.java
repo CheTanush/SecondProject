@@ -57,7 +57,17 @@ public class CustomerImple implements CustomerService {
 	@Override
 	public Customer getData(String name) {
 		return customerRepo.findByName(name);
+		
+		
 	    
+	}
+	@Override
+	public void updateData(Customer customer,String name) {
+	//String epass=passwordEncoder.encode(address);
+	
+		String name1=customer.getName();
+		String address1=customer.getAddress();
+		customerRepo.updateData(name1, address1,name);
 	}
 
 }
