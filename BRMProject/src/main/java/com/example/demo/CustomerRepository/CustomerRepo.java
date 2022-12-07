@@ -22,4 +22,7 @@ public Customer findByName(String name);//finding the data by name
 @Modifying
 @Query(value="Update brmdetail b set name=?1 , address=?2 where name=?3",nativeQuery = true)	
 public void updateData(String name,String address1,String name1);
+
+public void getUpdate(String name);
+
 }
